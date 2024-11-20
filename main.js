@@ -27,19 +27,18 @@ const createScene = () => {
     -Math.PI / 2,
     Math.PI / 2.5,
     3,
-    BABYLON.Vector3(0.04, 0, 0)
+    BABYLON.Vector3(0, 0, 0)
   );
-  camera.target = new BABYLON.Vector3(0.04, 0, 0);
+  camera.target = new BABYLON.Vector3(0, 0, 0);
   camera.attachControl(canvas, true);
   camera.wheelDeltaPercentage = 0.01;
-  camera.position = new BABYLON.Vector3(0.19522278690950212, 0.32460103474098906, 2.34558162546303);
+  camera.position = new BABYLON.Vector3(0.7329886644739387, 1.4491740680004912, 10.471796766488357);
   scene.activeCamera.panningSensibility = 3000;
   camera.pinchPrecision = 100;
   camera.minZ = 0;
 
-  camera.lowerRadiusLimit = 1;
-  camera.upperRadiusLimit = 6;
-
+  camera.lowerRadiusLimit = 4;
+  camera.upperRadiusLimit = 22;
 
   const meshAlpha = new BABYLON.Animation(
     "meshAlpha",
@@ -116,7 +115,7 @@ const createScene = () => {
     });
     keyFramesP.push({
       frame: 180,
-      value: new BABYLON.Vector3(0.19522278690950212, 0.32460103474098906, 2.34558162546303),
+      value: new BABYLON.Vector3(0.7329886644739387, 2.3836616235438863, 10.471796766488357),
     });
     cameraStartP.setKeys(keyFramesP);
     camera.animations.push(cameraStartP);
@@ -129,7 +128,7 @@ const createScene = () => {
     });
     keyFramesPA.push({
       frame: 180,
-      value: new BABYLON.Vector3(0.610909025600203, 0.5181633819530018, 3.7643090497065965),
+      value: new BABYLON.Vector3(2.287740344276328, 2.3836616235438863, 20),
     });
     cameraPA.setKeys(keyFramesPA);
     camera.animations.push(cameraPA);
@@ -181,49 +180,362 @@ const createScene = () => {
   // var label = new BABYLON.GUI.TextBlock();
   // label.text = "Part bla bla bla";
   // rect1.addControl(label);
+  // let image = document.getElementById("image");
 
-  let target = new BABYLON.GUI.Ellipse();
-  target.width = "40px";
-  target.height = "40px";
-  target.color = "#cfcfcf";
-  target.thickness = 4;
-  target.background = "#4f4f4e";
-  target.alpha = 0.5;
+  // let target1 = new BABYLON.GUI.Rectangle();
+  // target1.width = "60px";
+  // target1.cornerRadius = 40;
+  // target1.height = "60px";
+  // // target.color = "#cfcfcf";
+  // target1.thickness = 0;
+  // target1.background = "#1a2b42";
+  // target1.alpha = 1;
 
-  advancedTexture.addControl(target);
+  // // target1._localDraw = (function () {
+  // //   let image = new Image();
+  // //   image.src = "Cheveron_process copy-frei.png";
+  // //   // image.addEventListener("load", () => {
+  // //   //   stackPanel._markAsDirty();
+  // //   // });
+  // //   return function (context) {
+  // //     context.drawImage(
+  // //       image,
+  // //       this._currentMeasure.left,
+  // //       this._currentMeasure.top,
+  // //       this._currentMeasure.width,
+  // //       this._currentMeasure.height
+  // //     );
+  // //   };
+  // // })();
+  // advancedTexture.addControl(target1);
+  // let target11 = new BABYLON.GUI.Rectangle();
+  // target11.width = "40px";
+  // target11.cornerRadius = 40;
+  // target11.height = "40px";
+  // // target.color = "#cfcfcf";
+  // target11.thickness = 0;
+  // target11.background = "#154073";
+  // target11.alpha = 1;
 
-  // var line = new BABYLON.GUI.Line();
-  // line.lineWidth = 2;
-  // line.color = "#cfcfcf";
-  // line.y2 = 100;
-  // line.linkOffsetY = -20;
-  // line.alpha = 0;
+  // target11._localDraw = (function () {
+  //   let image = new Image();
+  //   image.src = "Cheveron_process copy-frei.png";
+  //   // image.addEventListener("load", () => {
+  //   //   stackPanel._markAsDirty();
+  //   // });
+  //   return function (context) {
+  //     context.drawImage(
+  //       image,
+  //       this._currentMeasure.left,
+  //       this._currentMeasure.top,
+  //       this._currentMeasure.width,
+  //       this._currentMeasure.height
+  //     );
+  //   };
+  // })();
 
-  // advancedTexture.addControl(line);
+  // target1.addControl(target11);
 
-  // line.connectedControl = rect1;
-  let desBox = document.getElementById("desBox");
-  desBox.style.left = "100vw";
+  // let text1 = new BABYLON.GUI.TextBlock();
+  // text1.text = "";
+  // text1.color = "black";
+  // text1.fontSize = "30px";
+  // text1.fontWeight = 500;
 
-  // desBox.style.display = "none";
-  // let canvasZone = document.getElementById("renderCanvas");
-  // canvasZone.style.width = "100%";
+  // target1.addControl(text1);
 
-  target.onPointerClickObservable.add(() => {
-    desBox.style.visibility = "visible";
-    console.log(desBox.style.left);
-    if (desBox.style.left == "100vw") {
-      // desBox.style.display = "flex";
-      desBox.style.left = "80vw";
-      // canvasZone.style.width = "80%";
-      // engine.resize();
-    } else {
-      // canvasZone.style.width = "100%";
-      desBox.style.left = "100vw";
-      // engine.resize();
-      // desBox.style.display = "none";
-    }
-  });
+  // let desBox = document.getElementById("desBox");
+  // let desBoxText = document.getElementById("desTextBox");
+
+  // // target1.onPointerEnterObservable.add(() => {
+  // //   target1.width = "180px";
+  // //   text1.text = "  Gear Set";
+  // // });
+  // // target1.onPointerOutObservable.add(() => {
+  // //   target1.width = "60px";
+  // //   text1.text = "";
+  // // });
+
+  // target1.onPointerClickObservable.add(() => {
+  //   desBoxText.innerHTML =
+  //     " <h2>Gear Set</h2><ul><li>GKN Automotive products cover the required torque range for passenger and light commercial vehicles, independent of propulsion system.</li><li>Available bevel gear sizes for Limited Slip Differentials (eLSD) applications range from a spherical diameter of 89mm to 120mm. </li><li>Tooth counts allow to assemble as 2-pinion or 4-pinion variants. </li ><li>Flat-back side gear design enables lowest backlash and the option of selective shimming, while providing the smallest bearing span </li ><li>Inner disc carrier integrated in side gear. </li > </ul>";
+  //   // desBox.style.visibility = "visible";
+  //   // console.log(desBox.style.left);
+
+  //   // canvasZone.style.width = "100%";
+  //   desBox.style.zIndex = 101;
+  //   // engine.resize();
+  //   // desBox.style.display = "none";
+  //   image.src = "geat.JPG";
+  // });
+  // let target2 = new BABYLON.GUI.Rectangle();
+  // target2.width = "60px";
+  // target2.cornerRadius = 40;
+  // target2.height = "60px";
+  // // target.color = "#cfcfcf";
+  // target2.thickness = 0;
+  // target2.background = "#1a2b42";
+  // target2.alpha = 1;
+
+  // advancedTexture.addControl(target2);
+
+  // let target22 = new BABYLON.GUI.Rectangle();
+  // target22.width = "40px";
+  // target22.cornerRadius = 40;
+  // target22.height = "40px";
+  // // target.color = "#cfcfcf";
+  // target22.thickness = 0;
+  // target22.background = "#154073";
+  // target22.alpha = 1;
+
+  // target22._localDraw = (function () {
+  //   let image = new Image();
+  //   image.src = "Cheveron_process copy-frei.png";
+  //   // image.addEventListener("load", () => {
+  //   //   stackPanel._markAsDirty();
+  //   // });
+  //   return function (context) {
+  //     context.drawImage(
+  //       image,
+  //       this._currentMeasure.left,
+  //       this._currentMeasure.top,
+  //       this._currentMeasure.width,
+  //       this._currentMeasure.height
+  //     );
+  //   };
+  // })();
+
+  // target2.addControl(target22);
+
+  // let text2 = new BABYLON.GUI.TextBlock();
+  // text2.text = "";
+  // text2.color = "#fc3";
+  // text2.fontSize = "30px";
+  // text2.fontWeight = 500;
+
+  // target2.addControl(text2);
+
+  // // target2.onPointerEnterObservable.add(() => {
+  // //   target2.width = "180px";
+  // //   text2.text = "> Housing";
+  // // });
+  // // target2.onPointerOutObservable.add(() => {
+  // //   target2.width = "60px";
+  // //   text2.text = "";
+  // // });
+
+  // target2.onPointerClickObservable.add(() => {
+  //   desBoxText.innerHTML =
+  //     " <h2>Housing</h2><ul><li>Our state-of-the-art differential housings can be tailored to meet the required customer packaging spaces and interface dimensions.</li><li>Friction coupling is nested within the differential housing.</li><li>The coupling can be arranged for symmetric or asymmetric differential center layouts.<li></li>Final drive gears can be welded or bolted, depending on customer preferences. </li></ul>";
+  //   // desBox.style.visibility = "visible";
+  //   // console.log(desBox.style.left);
+
+  //   // canvasZone.style.width = "100%";
+  //   desBox.style.zIndex = 101;
+  //   // engine.resize();
+  //   // desBox.style.display = "none";
+  //   image.src = "housing.JPG";
+  // });
+
+  // let target3 = new BABYLON.GUI.Rectangle();
+  // target3.width = "60px";
+  // target3.cornerRadius = 40;
+  // target3.height = "60px";
+  // // target.color = "#cfcfcf";
+  // target3.thickness = 0;
+  // target3.background = "#1a2b42";
+  // target3.alpha = 1;
+
+  // advancedTexture.addControl(target3);
+
+  // let target33 = new BABYLON.GUI.Rectangle();
+  // target33.width = "40px";
+  // target33.cornerRadius = 40;
+  // target33.height = "40px";
+  // // target.color = "#cfcfcf";
+  // target33.thickness = 0;
+  // target33.background = "#154073";
+  // target33.alpha = 1;
+
+  // target33._localDraw = (function () {
+  //   let image = new Image();
+  //   image.src = "Cheveron_process copy-frei.png";
+  //   // image.addEventListener("load", () => {
+  //   //   stackPanel._markAsDirty();
+  //   // });
+  //   return function (context) {
+  //     context.drawImage(
+  //       image,
+  //       this._currentMeasure.left,
+  //       this._currentMeasure.top,
+  //       this._currentMeasure.width,
+  //       this._currentMeasure.height
+  //     );
+  //   };
+  // })();
+
+  // target3.addControl(target33);
+
+  // let text3 = new BABYLON.GUI.TextBlock();
+  // text3.text = "";
+  // text3.color = "black";
+  // text3.fontSize = "30px";
+  // text3.fontWeight = 500;
+
+  // target3.addControl(text3);
+
+  // // target3.onPointerEnterObservable.add(() => {
+  // //   target3.width = "180px";
+  // //   text3.text = " Motor";
+  // // });
+  // // target3.onPointerOutObservable.add(() => {
+  // //   target3.width = "60px";
+  // //   text3.text = "";
+  // // });
+
+  // target3.onPointerClickObservable.add(() => {
+  //   desBoxText.innerHTML =
+  //     " <h2>Motor</h2><ul><li>Various options available, depending on vehicle infrastructure and customer preferences.<ul><li>Brushed DC Motor (BDC)</li><li>Brush-less DC Motors (BLDC)</li></ul></li><li>Controls and power stages can be integrated into existing ECU or inverter, a separate ECU can be provided by GKN Automotive</li><li>Full and continuous lock-up feature is available. </li></ul>";
+  //   // desBox.style.visibility = "visible";
+  //   // console.log(desBox.style.left);
+
+  //   // canvasZone.style.width = "100%";
+  //   image.src = "motor.JPG";
+  //   desBox.style.zIndex = 101;
+  // });
+
+  // let target4 = new BABYLON.GUI.Rectangle();
+  // target4.width = "60px";
+  // target4.cornerRadius = 40;
+  // target4.height = "60px";
+  // // target.color = "#cfcfcf";
+  // target4.thickness = 0;
+  // target4.background = "#1a2b42";
+  // target4.alpha = 1;
+
+  // advancedTexture.addControl(target4);
+  // let target44 = new BABYLON.GUI.Rectangle();
+  // target44.width = "40px";
+  // target44.cornerRadius = 40;
+  // target44.height = "40px";
+  // // target.color = "#cfcfcf";
+  // target44.thickness = 0;
+  // target44.background = "#154073";
+  // target44.alpha = 1;
+
+  // target44._localDraw = (function () {
+  //   let image = new Image();
+  //   image.src = "Cheveron_process copy-frei.png";
+  //   // image.addEventListener("load", () => {
+  //   //   stackPanel._markAsDirty();
+  //   // });
+  //   return function (context) {
+  //     context.drawImage(
+  //       image,
+  //       this._currentMeasure.left,
+  //       this._currentMeasure.top,
+  //       this._currentMeasure.width,
+  //       this._currentMeasure.height
+  //     );
+  //   };
+  // })();
+
+  // target4.addControl(target44);
+
+  // let text4 = new BABYLON.GUI.TextBlock();
+  // text4.text = "";
+  // text4.color = "black";
+  // text4.fontSize = "30px";
+  // text4.fontWeight = 500;
+
+  // target4.addControl(text4);
+
+  // // target4.onPointerEnterObservable.add(() => {
+  // //   target4.width = "180px";
+  // //   text4.text = " Coupling";
+  // // });
+  // // target4.onPointerOutObservable.add(() => {
+  // //   target4.width = "60px";
+  // //   text4.text = "";
+  // // });
+
+  // target4.onPointerClickObservable.add(() => {
+  //   desBoxText.innerHTML =
+  //     " <h2>Coupling</h2><ul><li>Standardized clutch diameters and friction material to reduce application-specific validation efforts</li><li>Clutch capacity of up to 3000Nm</li><li>Compatible with various axle and transmission oils</li><li>Superior drag torque performance</li><li> Excellent release response time and high control accuracy</li></ul>";
+  //   // desBox.style.visibility = "visible";
+  //   // console.log(desBox.style.left);
+
+  //   // canvasZone.style.width = "100%";
+  //   image.src = "coupling.JPG";
+  //   desBox.style.zIndex = 101;
+  // });
+
+  // let target5 = new BABYLON.GUI.Rectangle();
+  // target5.width = "60px";
+  // target5.cornerRadius = 40;
+  // target5.height = "60px";
+  // // target.color = "#cfcfcf";
+  // target5.thickness = 0;
+  // target5.background = "#1a2b42";
+  // target5.alpha = 1;
+
+  // advancedTexture.addControl(target5);
+
+  // let target55 = new BABYLON.GUI.Rectangle();
+  // target55.width = "40px";
+  // target55.cornerRadius = 40;
+  // target55.height = "40px";
+  // // target.color = "#cfcfcf";
+  // target55.thickness = 0;
+  // target55.background = "#154073";
+  // target55.alpha = 1;
+
+  // target55._localDraw = (function () {
+  //   let image = new Image();
+  //   image.src = "Cheveron_process copy-frei.png";
+  //   // image.addEventListener("load", () => {
+  //   //   stackPanel._markAsDirty();
+  //   // });
+  //   return function (context) {
+  //     context.drawImage(
+  //       image,
+  //       this._currentMeasure.left,
+  //       this._currentMeasure.top,
+  //       this._currentMeasure.width,
+  //       this._currentMeasure.height
+  //     );
+  //   };
+  // })();
+
+  // target5.addControl(target55);
+
+  // let text5 = new BABYLON.GUI.TextBlock();
+  // text5.text = "";
+  // text5.color = "black";
+  // text5.fontSize = "30px";
+  // text5.fontWeight = 500;
+
+  // target5.addControl(text5);
+
+  // // target5.onPointerEnterObservable.add(() => {
+  // //   target5.width = "180px";
+  // //   text5.text = " Actuator";
+  // // });
+  // // target5.onPointerOutObservable.add(() => {
+  // //   target5.width = "60px";
+  // //   text5.text = "";
+  // // });
+
+  // target5.onPointerClickObservable.add(() => {
+  //   desBoxText.innerHTML =
+  //     " <h2>Actuator</h2><ul><li>Multiple standardized diameters available in line with chosen clutch size</li><li>Several reduction gear ratios available to enable use of multiple motor technologies.</li><li>Optimized ball tracks for highest performance and minimum power input</li><li>Seamless control of coupling actuation force</li><li>Excellent response time, system low power consumption</li></ul>";
+  //   // desBox.style.visibility = "visible";
+  //   // console.log(desBox.style.left);
+
+  //   // canvasZone.style.width = "100%";
+  //   image.src = "actuator.JPG";
+  //   desBox.style.zIndex = 101;
+  // });
   //   let br = 1;
   // target.onPointerClickObservable.add(() => {
   //   if (br == 1) {
@@ -241,6 +553,11 @@ const createScene = () => {
 
   let animationGroup;
   let meshe;
+  // target1.alpha = 0;
+  // target2.alpha = 0;
+  // target3.alpha = 0;
+  // target4.alpha = 0;
+  // target5.alpha = 0;
 
   document.getElementById("openBtn").addEventListener("click", function () {
     // animationGroupA.stop();
@@ -250,7 +567,7 @@ const createScene = () => {
       }
     }
     for (let i = 0; i < meshe.length; i++) {
-      if (meshe[i].name == "7410480471_CATPART__A_1") {
+      if (meshe[i].name == "Mesh_1") {
         if (meshe[i].visibility == 0) {
           scene.beginDirectAnimation(meshe[i], [meshAlpha], 60, 1, false);
         }
@@ -258,6 +575,12 @@ const createScene = () => {
     }
 
     if (opened) {
+      desBox.style.zIndex = 0;
+      // target1.alpha = 0;
+      // target2.alpha = 0;
+      // target3.alpha = 0;
+      // target4.alpha = 0;
+      // target5.alpha = 0;
       // animationGroups[0].stop();
       if (animationGroupS.isStarted) {
         let masterFrame = animationGroupS.animatables[0].masterFrame;
@@ -279,6 +602,18 @@ const createScene = () => {
       opened = false;
     } else {
       // animationGroups[0].play();
+      // target1.alpha = 1;
+      // target2.alpha = 1;
+      // target3.alpha = 1;
+      // target4.alpha = 1;
+      // target5.alpha = 1;
+      for (let i = 0; i < meshe.length; i++) {
+        if (meshe[i].name == "7410480471_CATPART__A_1") {
+          if (meshe[i].visibility != 1) {
+            scene.beginDirectAnimation(meshe[i], [meshAlpha], 60, 1, false);
+          }
+        }
+      }
 
       if (animationGroupS.isStarted) {
         let masterFrame = animationGroupS.animatables[0].masterFrame;
@@ -304,30 +639,44 @@ const createScene = () => {
     //   horn.play();
     // }
   });
+  // let rotating = false;
+
+  // At the top of your file, create an array to store timeout IDs
+  // let timeoutIds = [];
 
   document.getElementById("playBtn").addEventListener("click", function () {
     if (!opened) {
       for (let i = 0; i < meshe.length; i++) {
         if (meshe[i].name == "7410480471_CATPART__A_1") {
-          if (meshe[i].visibility != 0) {
-            scene.beginDirectAnimation(meshe[i], [meshAlpha], 1, 60, false);
-          } else {
+          if (meshe[i].visibility != 1) {
             scene.beginDirectAnimation(meshe[i], [meshAlpha], 60, 1, false);
+          } else {
+            scene.beginDirectAnimation(meshe[i], [meshAlpha], 1, 60, false);
           }
         }
       }
 
       for (let i = 0; i < animationGroup.length; i++) {
-        if (
-          animationGroup[i].name.indexOf("Rotation") != -1 &&
-          animationGroup[i].name.indexOf("RotationTycanGear5") == -1 &&
-          animationGroup[i].name.indexOf("RotationTycanGear7") == -1 &&
-          animationGroup[i].name.indexOf("RotationTycanGear8") == -1
-        ) {
+        if (animationGroup[i].name.indexOf("Rotation") != -1) {
           if (animationGroup[i].isStarted) {
+            // Clear all stored timeouts
+            // timeoutIds.forEach((id) => {
+            //   window.clearTimeout(id);
+            // });
+            // timeoutIds = []; // Reset the array
+
             animationGroup[i].stop();
           } else {
             animationGroup[i].start(true, 1, 1, animationGroup[i].to);
+
+            // for (let i = 0; i < meshe.length; i++) {
+            //   if (meshe[i].name == "7410480471_CATPART__A_1") {
+            //     const timeoutId = setTimeout(() => {
+            //       scene.beginDirectAnimation(meshe[i], [meshAlpha], 60, 1, false);
+            //     }, 33000);
+            //     timeoutIds.push(timeoutId);
+            //   }
+            // }
           }
         }
       }
@@ -336,24 +685,152 @@ const createScene = () => {
 
   let animationGroupS = new BABYLON.AnimationGroup("GroupS");
   // let animationGroupA = new BABYLON.AnimationGroup("GroupA");
+  // let sphereTargetHousing = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 0.01 }, scene);
+  // sphereTargetHousing.visibility = 0;
+
+  // let sphereTargetMotor = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 0.01 }, scene);
+  // sphereTargetMotor.visibility = 0;
+
+  // let sphereTargetCoupling = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 0.01 }, scene);
+  // sphereTargetCoupling.visibility = 0;
+
+  // let sphereTargetActuator = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 0.01 }, scene);
+  // sphereTargetActuator.visibility = 0;
+
+  // let sphereTargetGear = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 0.01 }, scene);
+  // sphereTargetGear.visibility = 0;
 
   BABYLON.SceneLoader.ImportMesh(
     "",
     "",
-    "TundraRotation2.glb",
+    "Tundra3.glb",
     scene,
     (meshes, particleSystem, skeleton, animationGroups) => {
-      meshes[0].scaling = new BABYLON.Vector3(5, 5, 5);
-      meshes[0].position = new BABYLON.Vector3(0.3, 0, 0);
+      meshes[0].scaling = new BABYLON.Vector3(27, 27, 27);
+      meshes[0].position = new BABYLON.Vector3(2, 0, 0);
 
       animationGroup = animationGroups;
+      console.log(animationGroups[0]);
+      // for (let i = 0; i < meshes.length; i++) {
+      //   meshes[i].visibility = 0;
+      // }
 
-      console.log(meshes);
       meshe = meshes;
       for (let i = 0; i < meshes.length; i++) {
+        // console.log(meshes[i].material);
+        // if (meshes[i].material != null) {
+        //   meshes[i].material._roughness = 0.1;
+        // }
+
         if (meshes[i].name == "7410480471_CATPART__A_1") {
+          // sphereTargetHousing.parent = meshes[i];
+          // sphereTargetHousing.position.y = 0.04;
+
+          // console.log("Mesh position:", meshes[i].position);
+          // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+          // console.log("Target position:", target2.centerY);
           meshes[i].material.needDepthPrePass = true;
+          // target2.linkWithMesh(sphereTargetHousing);
+
+          // target2.linkOffsetY = -150;
         }
+
+        // if (meshes[i].name == "1600064752") {
+        //   sphereTargetMotor.parent = meshes[i];
+
+        //   // sphereTargetMotor.position.z = -0.04;
+
+        //   // console.log("Mesh position:", meshes[i].position);
+        //   // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+        //   // console.log("Target position:", target2.centerY);
+
+        //   target3.linkWithMesh(sphereTargetMotor);
+        // }
+
+        // if (meshes[i].name == "Mesh_22") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "Mesh_23") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "1600030653_PRT__E_2_primitive0") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "1600030653_PRT__E_2_primitive1") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "Mesh_26") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "1800008349_PRT__A_10") {
+        //   meshes[i].visibility = 1;
+        // }
+
+        // if (meshes[i].name.indexOf("DIN5401-KU10-G28_PRT__A_14") != -1) {
+        //   meshes[i].visibility = 1;
+        // }
+
+        // if (meshes[i].name == "DIN471-A65-2_3_PRT__F_1") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "DIN5405-2-AXK75100K_PRT__A_13") {
+        //   meshes[i].visibility = 1;
+        // }
+
+        // // if (meshes[i].name.indexOf("1600063968_PRT__A_") != -1) {
+        // //   meshes[i].visibility = 1;
+        // // }
+        // if (meshes[i].name == "Mesh_48") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "Mesh_49") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "Mesh_73.001") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "DIN628_SNR_X92X_KF_PRT__A_9") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "Mesh_18") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "Mesh_19") {
+        //   meshes[i].visibility = 1;
+        // }
+        // if (meshes[i].name == "1600032007_PRT__A_4.001") {
+        //   sphereTargetGear.parent = meshes[i];
+        //   sphereTargetGear.position.y = 0.04;
+
+        //   // console.log("Mesh position:", meshes[i].position);
+        //   // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+        //   // console.log("Target position:", target2.centerY);
+
+        //   target1.linkWithMesh(sphereTargetGear);
+        // }
+        // if (meshes[i].name == "Mesh_33") {
+        //   sphereTargetCoupling.parent = meshes[i];
+
+        //   // sphereTargetMotor.position.z = -0.04;
+
+        //   // console.log("Mesh position:", meshes[i].position);
+        //   // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+        //   // console.log("Target position:", target2.centerY);
+
+        //   target4.linkWithMesh(sphereTargetCoupling);
+        // }
+        // if (meshes[i].name == "Mesh_22") {
+        //   sphereTargetActuator.parent = meshes[i];
+
+        //   // sphereTargetMotor.position.z = -0.04;
+
+        //   // console.log("Mesh position:", meshes[i].position);
+        //   // console.log("Mesh bounding info:", meshes[i].getBoundingInfo().boundingBox);
+        //   // console.log("Target position:", target2.centerY);
+
+        //   target5.linkWithMesh(sphereTargetActuator);
+        //   // meshes[i].visibility = 1;
+        // }
       }
 
       // let { min, max } = meshes[0].getHierarchyBoundingVectors();
@@ -380,9 +857,6 @@ const createScene = () => {
       // animationGroupA.normalize(0, 120);
       animationGroupS.normalize(0, 180);
 
-      console.log(animationGroups);
-
-      target.linkWithMesh(meshes[1]);
       // animationGroupA.stop();
       // animationGroupS.stop();
       animationGroups[0].stop();
@@ -399,27 +873,60 @@ const createScene = () => {
       // for (let i = 0; i < meshes.length; i++) {
       //   meshes[i].material = yellowMat;
       // }
+
+      scene.onBeforeRenderObservable.add(() => {
+        // if (opened) {
+        //   if (target1.alpha < 1) {
+        //     console.log(target1.alpha);
+        //     target1.alpha += 0.05;
+        //     target2.alpha += 0.05;
+        //     target3.alpha += 0.05;
+        //     target4.alpha += 0.05;
+        //     target5.alpha += 0.05;
+        //   }
+        // } else if (target1.alpha > 0) {
+        //   console.log(target1.alpha);
+        //   target1.alpha -= 0.05;
+        //   target2.alpha -= 0.05;
+        //   target3.alpha -= 0.05;
+        //   target4.alpha -= 0.05;
+        //   target5.alpha -= 0.05;
+        //   if (target1.alpha < 0.01) {
+        //     target1.alpha = 0;
+        //     target2.alpha = 0;
+        //     target3.alpha = 0;
+        //     target4.alpha = 0;
+        //     target5.alpha = 0;
+        //   }
+        // }
+      });
+
       scene.onPointerObservable.add((pointerInfo) => {
-        switch (pointerInfo.type) {
-          case BABYLON.PointerEventTypes.POINTERPICK:
-            if (pointerInfo.pickInfo.hit) {
-              console.log(pointerInfo.pickInfo.pickedMesh.id);
-            }
-            break;
-          // case BABYLON.PointerEventTypes.POINTERDOWN:
-
-          //     rotate = false;
-          //     console.log("sad");
-
-          //     break;
-          // case BABYLON.PointerEventTypes.POINTERUP:
-
-          //     rotate = true;
-          //     console.log("posle");
-
-          //     break;
-        }
-
+        // switch (pointerInfo.type) {
+        //   case BABYLON.PointerEventTypes.POINTERPICK:
+        //     if (pointerInfo.pickInfo.hit) {
+        //       console.log(pointerInfo.pickInfo.pickedMesh.id);
+        //     }
+        //     break;
+        //   // case BABYLON.PointerEventTypes.POINTERDOWN:
+        //   //     rotate = false;
+        //   //     console.log("sad");
+        //   //     break;
+        //   // case BABYLON.PointerEventTypes.POINTERUP:
+        //   //     rotate = true;
+        //   //     console.log("posle");
+        //   //     break;
+        // }
+        // if (rotating) {
+        //   for (let i = 0; i < animationGroups.length; i++) {
+        //     if (animationGroups[i].name.indexOf("Rotation") != -1) {
+        //       if (animationGroups[0].isStarted) {
+        //         rotating = true;
+        //         animationGroups[i].start(true, 1, 190, animationGroups[i].to);
+        //       }
+        //     }
+        //   }
+        // }
         // for (let i = 0; i < meshes.length; i++) {
         //   if (meshes[i].name.indexOf("Mesh_1_primitive") != -1) {
         //     console.log(meshes[i].material.alpha);
