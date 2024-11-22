@@ -89,7 +89,7 @@ const createScene = () => {
     });
     keyFramesMA.push({
       frame: 60,
-      value: 0,
+      value: 0.2,
     });
     meshAlpha.setKeys(keyFramesMA);
     camera.animations.push(meshAlpha);
@@ -707,7 +707,7 @@ const createScene = () => {
   BABYLON.SceneLoader.ImportMesh(
     "",
     "",
-    "Tundra3.glb",
+    "TundraRotation4.glb",
     scene,
     (meshes, particleSystem, skeleton, animationGroups) => {
       meshes[0].scaling = new BABYLON.Vector3(27, 27, 27);
