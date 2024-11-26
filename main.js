@@ -114,12 +114,12 @@ const createScene = () => {
       value: new BABYLON.Vector3(camera.position.x, camera.position.y, camera.position.z),
     });
   keyFramesP.push({
-      frame: 220,
+      frame: 180,
       value: new BABYLON.Vector3(camera.position.x, camera.position.y, camera.position.z),
     });
     keyFramesP.push({
       frame: 320,
-      value: new BABYLON.Vector3(0.43246934946106763, 0.8207297361144514, 5.930629857779956),
+      value: new BABYLON.Vector3(0.7329886644739387, 2.3836616235438863, 10.471796766488357),
     });
     cameraStartP.setKeys(keyFramesP);
     camera.animations.push(cameraStartP);
