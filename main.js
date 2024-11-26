@@ -231,6 +231,7 @@ const createScene = () => {
   // });
 
   target1.onPointerClickObservable.add(() => {
+     if (opened) {
     desBoxText.innerHTML =
       " <h2>Gear Set</h2><ul><li>GKN Automotive products cover the required torque range for passenger and light commercial vehicles, independent of propulsion system</li><li>Available bevel gear sizes range from a spherical diameter of 64mm to 120mm</li><li>Tooth counts allow to assemble as 2-pinion or 4-pinion variants</li ><li>Flat-back side gear design enables lowest backlash and the option of selective shimming, while providing the smallest bearing span</li ></ul>";
     // desBox.style.visibility = "visible";
@@ -241,6 +242,7 @@ const createScene = () => {
     // engine.resize();
     // desBox.style.display = "none";
     image.src = "gear.JPG";
+     }
   });
   let target2 = new BABYLON.GUI.Rectangle();
   target2.width = "60px";
@@ -299,6 +301,7 @@ const createScene = () => {
   // });
 
   target2.onPointerClickObservable.add(() => {
+     if (opened) {
     desBoxText.innerHTML =
       " <h2>Housing</h2><ul><li>Our state-of-the-art differential housings can be tailored to meet the required customer packaging spaces and interface dimensions</li><li>Disconnect mechanism integrated into housing</li><li>High level of integration and low system drag loss enabling system efficiency improvement</li><li>Final drive gears can be welded or bolted, depending on customer preferences</li></ul>";
     // desBox.style.visibility = "visible";
@@ -309,6 +312,7 @@ const createScene = () => {
     // engine.resize();
     // desBox.style.display = "none";
     image.src = "housing.JPG";
+     }
   });
 
   let target3 = new BABYLON.GUI.Rectangle();
@@ -368,6 +372,7 @@ const createScene = () => {
   // });
 
   target3.onPointerClickObservable.add(() => {
+     if (opened) {
     desBoxText.innerHTML =
       " <h2>Dog Clutch</h2><ul><li>High abusive torque of over 20.000 Nm</li><li>Durability of up to 750.000 actuations</li><li>Worst case shift times of 60-80ms (depending on system and delta speed)</li><li>Maximum possible engagement up to 150rpm w/o ratcheting (functional feature)</li><li>Minimum speed to protect from engagement 300rpm (safety feature)</li></ul>";
     // desBox.style.visibility = "visible";
@@ -376,6 +381,7 @@ const createScene = () => {
     // canvasZone.style.width = "100%";
     image.src = "dogClutch.JPG";
     desBox.style.zIndex = 101;
+     }
   });
 
   let target4 = new BABYLON.GUI.Rectangle();
@@ -434,6 +440,7 @@ const createScene = () => {
   // });
 
   target4.onPointerClickObservable.add(() => {
+     if (opened) {
     desBoxText.innerHTML =
       " <h2>Actuator</h2><ul><li>Solenoid Actuator optimized for package within disconnect differential</li><li>Low actuation force of 95N - 200N</li><li>Low software and electronic hardware integration effort</li><li>Normally / failsafe open</li><li>Bi-stable actuator possible</li><li>Reliable status detection via sensor</li><li>Various customer applications in both eDrive and 4WD applications</li></ul>";
     // desBox.style.visibility = "visible";
@@ -442,6 +449,7 @@ const createScene = () => {
     // canvasZone.style.width = "100%";
     image.src = "actuator.JPG";
     desBox.style.zIndex = 101;
+     }
   });
 
   // let target5 = new BABYLON.GUI.Rectangle();
