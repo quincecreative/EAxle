@@ -1,0 +1,15 @@
+{
+  "background_color": "white",
+  "description": "EDD model",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "Icon.png",
+      "sizes": "150x150",
+      "type": "image/png"
+    }
+  ],
+  "name": "EDD",
+  "short_name": "EDD",
+  "start_url": "/EDD/index.html"
+}
